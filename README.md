@@ -2,9 +2,11 @@
 
 Extract code from within triple-quotes (```) in markdown files (code blocks).
 
-Run the extracted code using `exec()` or `subprocess.run`.
+## Usage
 
-## Getting code blocks from markdown files
+### Getting code blocks from markdown files
+
+The `language` parameter defaults to `python`. This will find codeblocks that start with **\`\`\`python**
 
 ```python
 from get_code_from_markdown import *
@@ -17,9 +19,7 @@ with open("README.md", "r") as f:
     blocks = get_code_from_markdown_file(f, language="python")
 ```
 
-The `language` parameter defaults to `python`
-
-## Running code blocks from markdown files
+### Running code blocks from markdown files
 
 You can use a subprocess or just exec the code to see if it works.
 
@@ -38,9 +38,16 @@ run_code_from_markdown_blocks(blocks, method=RunMethods.SUBPROCESS)
 run_code_from_markdown_blocks(blocks, method=RunMethods.SUBPROCESS(["python3", "-c"]))
 ```
 
-## Format of outputted code blocks
+### Format of outputted code blocks
 
 The format is a list of `\n`-delimited strings, each representing a block of code from the parsed markdown file. You can split the code blocks further into individual lines of code with `string.split("\n")`
+
+## Development
+
+- Use the Black code formatter
+- Run `pytest test.py`
+- Type hints are appreciated
+- Build a package for PyPI: `python -m build --sdist --wheel`
 
 ## Legal
 
