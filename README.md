@@ -24,7 +24,7 @@ with open("README.md", "r") as f:
 You can use a subprocess or just exec the code to see if it works.
 
 ```python
-from get_code_from_markdown import *
+from get_code_from_markdown import run_code_from_markdown_blocks
 blocks = ["print('hello world')"]
 
 # run function uses exec() by default
@@ -44,9 +44,8 @@ The format is a list of `\n`-delimited strings, each representing a block of cod
 
 ## Development
 
-- Use the Black code formatter
-- Run `pytest test.py`
-- Type hints are appreciated
+- Use `black` (code linter)
+- Run `pytest` (unit tests)
 - Build a package for PyPI: `python -m build --sdist --wheel`
 
 ## Legal
