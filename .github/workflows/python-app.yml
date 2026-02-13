@@ -38,7 +38,7 @@ jobs:
         pip install . black pytest
     - name: Test with pytest
       run: |
-        pytest -v test.py
+        pytest
     - name: Check code style with Black
       run: |
         black . --check --verbose

@@ -1,6 +1,7 @@
 """
 Extract code blocks from markdown files
 """
+
 import re
 from typing import TextIO, Callable
 import subprocess
